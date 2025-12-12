@@ -1,0 +1,403 @@
+/* -------------------------------
+   GLOBAL BACKGROUND AREAS
+-------------------------------- */
+.aboutHeroBg {
+    margin: 0;
+    padding: 0;
+}
+
+/* 1️⃣ Zone 1 (About / Glance / Mission / Vision) */
+/* .zone-1 {
+    background: url('/uploads/3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+} */
+
+.zone-1 {
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.zone1-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.35;   /* control visibility */
+}
+
+/* 2️⃣ Zone 2 (Inspiration / Founder) */
+.zone-2 {
+    /* background: #f4f4f4;
+    padding: 80px 0; */
+
+    background: url('/uploads/7.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+}
+
+/* 3️⃣ Zone 3 (Advisor / Team) */
+.zone-3 {
+    background: #000;
+    padding: 80px 0;
+}
+
+/* -------------------------------
+   GLASS WRAPPER (one big card)
+-------------------------------- */
+.about-wrapper {
+    width: 65%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 60px;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+}
+
+/* -------------------------------
+   COMMON SECTION LAYOUTS
+-------------------------------- */
+.type-one,
+.type-two,
+.type-one-1 {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+/* about + vision image on right side */
+.type-two {
+    flex-direction: row-reverse;
+}
+
+/* text & image columns */
+.about-image,
+.about-image-2 {
+    flex: 0 0 45%;
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* image sizing – no weird stretching */
+.about-image img,
+.about-image-2 img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    object-fit: cover;
+}
+
+/* -------------------------------
+   TITLES
+-------------------------------- */
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 70px;
+    height: 3px;
+    background: #00833d;
+}
+
+/* inspiration inner title */
+.about-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* center title rows */
+.about-title-center {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.about-title-center .section-title {
+    display: inline-block;
+}
+
+/* -------------------------------
+   FOUNDER (card centered)
+-------------------------------- */
+.founder-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* only for founder wrapper row */
+.founder-grid .type-one-1 {
+    justify-content: center;
+    padding: 0; /* avoid extra big gap */
+}
+
+.founder-card {
+    max-width: 650px;
+    width: 100%;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.9);
+    padding: 30px 35px;
+    text-align: center;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+}
+
+.founder-card h3 {
+    margin-top: 16px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.founder-img {
+    width: 260px;
+    height: 260px;
+    border-radius: 22px;
+    object-fit: cover;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+/* -------------------------------
+   ADVISOR (clean grid, no overlap)
+-------------------------------- */
+.about-title-center .section-title-1 {
+    display: inline-block;
+    color: #f5f5f5;
+}
+.advisor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 10px auto 50px;
+}
+
+.advisor-card {
+    width: 260px;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    text-align: center;
+    color: #f5f5f5;
+}
+
+.advisor-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.advisor-card h4 {
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+
+.advisor-icon {
+    font-size: 14px;
+}
+
+/* -------------------------------
+   TEAM AUTO-SLIDER
+-------------------------------- */
+.team-slider {
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;      /* Firefox hide scrollbar */
+    -ms-overflow-style: none;   /* IE hide scrollbar */
+    padding: 10px 0 40px 0;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.team-slider::-webkit-scrollbar {
+    display: none; /* Chrome/Safari hide scrollbar */
+}
+
+.team-track {
+    display: flex;
+    gap: 30px;
+    animation: slideTeam 15s linear infinite;
+    align-items: stretch;
+}
+
+/* TEAM CARD BASE */
+.team-card {
+    min-width: 260px;
+    max-width: 260px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.4);
+    color: #fff;
+    transition: transform 0.2s ease;
+}
+
+.team-card:hover {
+    transform: scale(1.03);
+}
+
+.team-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.team-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.team-card p {
+    font-size: 14px;
+}
+
+/* AUTO-SLIDE ANIMATION */
+@keyframes slideTeam {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Pause animation on hover */
+.team-slider:hover .team-track {
+    animation-play-state: paused;
+}
+
+
+/* -------------------------------
+   AOS helper transforms
+-------------------------------- */
+[data-aos="slide-left"]      { transform: translateX(-60px); opacity: 0; }
+[data-aos="slide-right"]     { transform: translateX(60px); opacity: 0; }
+[data-aos="pop-top"]         { transform: translateY(-60px) scale(0.9); opacity: 0; }
+[data-aos="inside-out"]      { transform: scale(0.7); opacity: 0; }
+[data-aos="zoom-in"]         { transform: scale(0.7); opacity: 0; }
+
+[data-aos].aos-animate {
+    transform: translate(0,0) scale(1);
+    opacity: 1;
+    transition: all 0.9s ease;
+}
+
+/* -------------------------------
+   RESPONSIVE
+-------------------------------- */
+@media (max-width: 991px) {
+    .about-wrapper {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .type-one,
+    .type-two,
+    .type-one-1 {
+        flex-direction: column;
+        padding: 40px 0;
+    }
+
+    .about-image,
+    .about-image-2 {
+        flex: 0 0 100%;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .founder-card {
+        padding: 22px 18px;
+    }
+}
+
+@media (max-width: 575px) {
+    .advisor-card {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    .founder-img {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* TABLET VIEW */
+@media (max-width: 992px) {
+    .team-track {
+        gap: 20px;
+    }
+
+    .team-card {
+        min-width: 220px;
+        max-width: 220px;
+    }
+
+    .team-card img {
+        height: 200px;
+    }
+}
+
+/* LARGE MOBILE DEVICES */
+@media (max-width: 768px) {
+    .team-track {
+        gap: 16px;
+        animation: slideTeam 20s linear infinite; /* faster for small screens */
+    }
+
+    .team-card {
+        min-width: 200px;
+        max-width: 200px;
+        padding: 14px;
+    }
+
+    .team-card img {
+        height: 180px;
+    }
+
+    .team-card h4 {
+        font-size: 15px;
+    }
+
+    @keyframes slideTeam {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-500%); }
+    }
+}
